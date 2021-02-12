@@ -8,6 +8,8 @@ import Home from "./Home";
 import Register from "./Register";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
+import Profile from "./Profile";
+import Review from "./Review";
 const items = [
     { name: 'home', label: 'Home' },
     { name: 'billing', label: 'Billing' },
@@ -24,6 +26,8 @@ class Main extends Component {
                     <li><NavLink exact to="/">Home</NavLink></li>
                     <li><NavLink to="/stuff">Register</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li>
+                    <li><NavLink to="/profile">Profile</NavLink></li>
+                    <li><NavLink to="/review">Review replies and offers</NavLink></li>
                 </ul>
                 <div>
                     <Sidebar items={items} />
@@ -33,6 +37,8 @@ class Main extends Component {
                     <Route exact path="/" component={Home}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/contact" component={Contact}/>
+                    <Route path="/profile" component={Profile}/>
+                    <Route path="/review" component={Review}/>
                 </div>
             </div>
             
