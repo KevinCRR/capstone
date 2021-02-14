@@ -11,13 +11,14 @@ import {
 } from "react-router-dom";
 
 import Home from "./Home";
-import Register from "./Register";
+import Login from "./containers/Login";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
 import GigDetail from "./GigDetail";
 import Profile from "./Profile";
 import Review from "./Review";
 import Search from "./Search";
+import Register from "./containers/Register"
 
 // const items = [
 //     { name: 'home', label: 'Home' },
@@ -73,7 +74,7 @@ class Main extends Component {
                         </NavLink>
                       </li>
                       <li className="nav-item">
-                        <NavLink to="/register">  
+                        <NavLink to="/login">  
                           <a href="#" className="nav-link contact">Sign In</a>
                         </NavLink>
                       </li>
@@ -84,6 +85,7 @@ class Main extends Component {
 
           <Switch>
             <Route exact path="/" component={Home}/>
+            <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/gig-detail" component={GigDetail}/>
