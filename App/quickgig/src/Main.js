@@ -64,7 +64,7 @@ class Main extends Component {
                         </NavLink>
                       </li>
                       <li className="nav-item">
-                        <NavLink to="/reviews">
+                        <NavLink to="/review">
                           <a href="#" className="nav-link">Reviews</a>
                         </NavLink>
                       </li>
