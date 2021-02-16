@@ -9,16 +9,31 @@ import {
   } from "react-router-dom";
 import "./login.css";
 
+
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const url = 'http://localhost:3000'
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+ 
+    alert('A form was submitted: ' + email + password)
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(
+            email,
+            password
+        )
+      }).then(function(response) {
+        console.log(response)
+        return response.json();
+      });
   }
 
   return (
@@ -39,9 +54,10 @@ export default function Login() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            
           />
         </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
+        <Button block size="lg" type="submit" disabled={!validateForm()} >
           Login
         </Button>
         <div>
@@ -55,3 +71,4 @@ export default function Login() {
     </div>
   );
 }
+

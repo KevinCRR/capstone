@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./register.css";
 
-export default function Login() {
+export default function Register() {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -16,7 +16,7 @@ export default function Login() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return email.length > 0 && password.length > 0 && passwordConfirm.length > 0;
   }
 
   function handleSubmit(event) {
@@ -123,4 +123,5 @@ export default function Login() {
     </div>
   );
 }
- 
+
+
