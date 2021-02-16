@@ -18,7 +18,8 @@ import GigDetail from "./GigDetail";
 import Profile from "./Profile";
 import Review from "./Review";
 import Search from "./Search";
-import Register from "./containers/Register"
+import Register from "./containers/Register";
+import CreateGig from "./CreateGig";
 
 // const items = [
 //     { name: 'home', label: 'Home' },
@@ -59,6 +60,11 @@ class Main extends Component {
                         </NavLink>
                       </li>
                       <li className="nav-item">
+                        <NavLink to="/create-gig">
+                          <a href="#" className="nav-link">Create Gig</a>
+                        </NavLink>
+                      </li>
+                      <li className="nav-item">
                         <NavLink to="/profile">
                           <a href="#" className="nav-link">Profile</a>
                         </NavLink>
@@ -92,6 +98,7 @@ class Main extends Component {
             <Route path="/profile" component={Profile}/>
             <Route path="/review" component={Review}/>
             <Route path="/search" component={Search}/>
+            <Route path="/create-gig" component={CreateGig}/>
           </Switch>
 
           <footer className="site-footer">
