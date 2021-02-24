@@ -14,12 +14,12 @@ import Home from "./Home";
 import Login from "./containers/Login";
 import Contact from "./Contact";
 import Sidebar from "./Sidebar";
-import GigDetail from "./GigDetail";
+import GigDetail from "./gig-components/GigDetail";
 import Profile from "./Profile";
 import Review from "./Review";
-import Search from "./Search";
+import Search from "./gig-components/Search";
 import Register from "./containers/Register";
-import CreateGig from "./CreateGig";
+import CreateGig from "./gig-components/CreateGig";
 
 // const items = [
 //     { name: 'home', label: 'Home' },
@@ -60,7 +60,7 @@ class Main extends Component {
                         </NavLink>
                       </li>
                       <li className="nav-item">
-                        <NavLink to="/create-gig">
+                        <NavLink to="/gig-create">
                           <a href="#" className="nav-link">Create Gig</a>
                         </NavLink>
                       </li>
@@ -98,7 +98,7 @@ class Main extends Component {
             <Route path="/profile" component={Profile}/>
             <Route path="/review" component={Review}/>
             <Route path="/search" component={Search}/>
-            <Route path="/create-gig" component={CreateGig}/>
+            <Route path="/gig-create" component={CreateGig}/>
           </Switch>
 
           <footer className="site-footer">
