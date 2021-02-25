@@ -1,15 +1,20 @@
 import React, { Component } from "react";
- 
+import PostsContainer from "./gig-components/PostsContainer";
+
 class Home extends Component {
   render() {
     return (
       <div>
-        <h2>First Page</h2>
-        <p>Page Content.</p>
-        <p></p>
+        <center>
+          <h2>
+            Welcome to <strong>QUICK</strong>GIG
+          </h2>
+          <hr />
+        </center>
+        <PostsContainer />
       </div>
     );
   }
 }
- 
+
 export default Home;
