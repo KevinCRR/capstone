@@ -15,7 +15,7 @@ import Review from "./Review";
 import Search from "./gig-components/Search";
 import Register from "./containers/Register";
 import CreateGig from "./gig-components/CreateGig";
-import NavBar from "./gig-components/NavBar";
+import TabBar from "./gig-components/TabBar";
 import Footer from "./gig-components/Footer";
 
 // const items = [
@@ -28,7 +28,7 @@ class Main extends Component {
   render() {
     return (
       <Router>
-        <NavBar />
+        <TabBar />
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
