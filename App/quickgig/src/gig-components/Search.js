@@ -11,14 +11,16 @@ class Search extends Component {
         <section className="project-detail section-padding-half bg-light">
           <div className="container">
             <div className="row">
-              <div className="col-4 col-lg-4 col-md-4 col-xs-12">
+              {/* <div className="col-4 col-lg-4 col-md-4 col-xs-12">
                   
                 <SearchFilters />
 
-              </div>
-              <div className="col-8 col-lg-8 col-md-8 col-xs-12">
+              </div> */}
+              <div className="col-12 col-lg-12 col-md-12 col-xs-12">
                 <div className="row">
-                  <SearchForm />
+                  <div className="col-12">
+                    <SearchForm />
+                  </div>
                 </div>
                 <div className="row">
                   <SearchResult />
