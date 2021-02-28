@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import SearchFilters from "./SearchFilters";
 import SearchForm from "./SearchForm";
 import SearchResult from "./SearchResult";
+import PostsContainer from "./PostsContainer";
  
 class Search extends Component {
   render() {
@@ -17,13 +18,15 @@ class Search extends Component {
 
               </div> */}
               <div className="col-12 col-lg-12 col-md-12 col-xs-12">
-                <div className="row">
+                <div className="row mb-5">
                   <div className="col-12">
                     <SearchForm />
                   </div>
                 </div>
                 <div className="row">
-                  <SearchResult />
+                  <div className="col-12">
+                    <PostsContainer />
+                  </div>
                 </div>
               </div>
             </div>
