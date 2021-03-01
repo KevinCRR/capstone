@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 // const sequelize = new Sequelize('sqlite::memory');
-
+import Address from "./Address";
 export default class User extends Model {}
 User.init({
   //uuidb4
@@ -15,7 +15,7 @@ User.init({
     type: DataTypes.UUIDV4,
 
     references: {
-      model: addresses,
+      model: Address,
       key: "addressID",
       deferrable: Deferrable.INITIALLY_IMMEDIATE,
     },
@@ -51,5 +51,5 @@ User.init({
 
   dateOfBirth: { type: DataTypes.DATE, allowNull: false },
 
-  bio: 
+  bio: { type: DataTypes.STRING, allowNull: false },
 });
