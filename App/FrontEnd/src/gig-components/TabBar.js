@@ -52,7 +52,9 @@ class TabBar extends Component {
           ></Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item href="/search">Search</Dropdown.Item>
+            <Dropdown.Item href="/search" style={{ zIndex: 2 }}>
+              Search
+            </Dropdown.Item>
             <Dropdown.Item href="/gig-detail">Gig Example</Dropdown.Item>
             <Dropdown.Item href="/gig-create">Create Gig</Dropdown.Item>
             <Dropdown.Item href="/profile">Profile</Dropdown.Item>

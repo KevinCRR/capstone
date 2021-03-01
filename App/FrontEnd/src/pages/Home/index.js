@@ -1,17 +1,18 @@
 import React, { Component } from "react";
+
 import PostsContainer from "../../gig-components/PostsContainer";
+import PictureCarousel from "../../gig-components/PictureCarousel";
 
 class Home extends Component {
   render() {
     return (
       <div>
         <center>
-          <h2>
-            Welcome to <strong>QUICK</strong>GIG
-          </h2>
+          <PictureCarousel />
           <hr />
         </center>
         <PostsContainer />
+        <hr />
       </div>
     );
   }
