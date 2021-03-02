@@ -1,8 +1,8 @@
 import { createRef } from "react";
 
-import "../css/templatemo-digital-trend.css";
+import "../../css/templatemo-digital-trend.css";
 import React, { Component } from "react";
-import icon from "../images/icon.png";
+import icon from "../../images/icon.png";
 import { Carousel, Button } from "react-bootstrap";
 
 class PictureCarousel extends Component {

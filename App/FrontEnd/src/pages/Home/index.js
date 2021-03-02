@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import PostsContainer from "../../gig-components/PostsContainer";
-import PictureCarousel from "../../gig-components/PictureCarousel";
+import PostsContainer from "../Gig/PostsContainer";
+import PictureCarousel from "./PictureCarousel";
 
 class Home extends Component {
   render() {
