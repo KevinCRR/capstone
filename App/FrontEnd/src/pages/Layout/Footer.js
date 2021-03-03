@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import "../css/bootstrap.min.css";
-import "../css/templatemo-digital-trend.css";
+import "../../css/bootstrap.min.css";
+import "../../css/templatemo-digital-trend.css";
 
 class Footer extends Component {
   render() {

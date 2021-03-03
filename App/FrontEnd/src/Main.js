@@ -8,15 +8,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
-import Sidebar from "./Sidebar";
-import GigDetail from "./gig-components/GigDetail";
+import GigDetail from "./pages/Gig/Gig";
 import Profile from "./pages/Profile";
 import Review from "./pages/Review";
-import Search from "./gig-components/Search";
+import Search from "./pages/Search";
 import Register from "./pages/Register";
-import CreateGig from "./gig-components/CreateGig";
-import TabBar from "./gig-components/TabBar";
-import Footer from "./gig-components/Footer";
+import CreateGig from "./pages/Gig/GigCreate";
+import TabBar from "./pages/Layout/TabBar";
+import Footer from "./pages/Layout/Footer";
 
 export default function Main() {
   /*
@@ -49,7 +48,7 @@ export default function Main() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/contact" component={Contact} />
-          <Route path="/gig-detail" component={GigDetail} />
+          <Route path="/gig" component={GigDetail} />
           <Route path="/profile" component={Profile} />
           <Route path="/review" component={Review} />
           <Route path="/search" component={Search} />

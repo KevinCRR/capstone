@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import "../css/bootstrap.min.css";
-import "../css/templatemo-digital-trend.css";
+import "../../css/bootstrap.min.css";
+import "../../css/templatemo-digital-trend.css";
 import { NavLink } from "react-router-dom";
-import icon from "../images/icon.png";
+import icon from "../../images/icon.png";
 import { Dropdown, Button, Navbar, ButtonGroup } from "react-bootstrap";
 
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
@@ -55,7 +55,7 @@ class TabBar extends Component {
             <Dropdown.Item href="/search" style={{ zIndex: 2 }}>
               Search
             </Dropdown.Item>
-            <Dropdown.Item href="/gig-detail">Gig Example</Dropdown.Item>
+            <Dropdown.Item href="/gig">Gig Example</Dropdown.Item>
             <Dropdown.Item href="/gig-create">Create Gig</Dropdown.Item>
             <Dropdown.Item href="/profile">Profile</Dropdown.Item>
             <Dropdown.Item href="/contact">Reviews</Dropdown.Item>
@@ -74,7 +74,7 @@ class TabBar extends Component {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/gig-detail">
+              <NavLink to="/gig">
                 <a href="#" className="nav-link">
                   Gig Example
                 </a>

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import SearchFilters from "./SearchFilters";
 import SearchForm from "./SearchForm";
 import SearchResult from "./SearchResult";
-import PostsContainer from "./PostsContainer";
+import PostsContainer from "../Gig/PostsContainer";
  
 class Search extends Component {
   render() {

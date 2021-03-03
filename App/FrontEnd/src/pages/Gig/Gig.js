@@ -1,6 +1,19 @@
 import React, { Component } from "react";
  
 class GigDetail extends Component {
+
+  state = {
+    id: this.props.id,
+    status: this.props.status,
+    address: this.props.address,
+    title: this.props.title,
+    description: this.props.description,
+    price: this.props.img,
+    budget: this.props.budget,
+    date: this.props.date,
+    visible: this.props.visible,
+  };
+
   render() {
     return (
       <div>
