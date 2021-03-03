@@ -3,18 +3,16 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./profile.css";
 
-class Profile extends Component {
+function Profile() {
 
-  state = {
-    img: this.props.img,
-    name: this.props.name,
-    Dob: this.props.Dob,
-    country: this.props.country,
-    city: this.props.city,
-    address: this.props.address
-  }
+  const profile = useState({
+    img: '',
+    name: '',
+    Dob: '',
+    country: '',
+    city: '',
+    address: ''})
 
-  render() {
     return (
       <div>
         <section className="project-detail section-padding-half bg-light">
@@ -50,30 +48,30 @@ class Profile extends Component {
                 <div className="row mt-5">
                   <div className="col-4">
                     <div className="image">
-                      <img src={this.state.img} alt="" />
+                      <img src={profile.img} alt="" />
                     </div>
                     <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
-                      Name: {this.state.name}
+                      Name: {profile.name}
                     </p>
                   </div>
                   <div className="col-4">
                     <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
-                      Date of birth: {this.state.Dob}
+                      Date of birth: {profile.Dob}
                     </p>
                   </div>
                   <div className="col-4">
                     <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
-                      Country: {this.state.country}
+                      Country: {profile.country}
                     </p>
                   </div>
                   <div className="col-4">
                     <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
-                      City: {this.state.city}
+                      City: {profile.city}
                     </p>
                   </div>
                   <div className="col-4">
                     <p className="font-size-5 text-gray mb-0">
-                      Address: {this.state.address}
+                      Address: {profile.address}
                     </p>
                   </div>
                 </div>
@@ -90,6 +88,5 @@ class Profile extends Component {
       </div>
     );
   }
-}
 
 export default Profile;
