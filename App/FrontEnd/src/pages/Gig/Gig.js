@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import {
+  Button,
+  Image,
+} from "react-bootstrap";
  
 class GigDetail extends Component {
 
@@ -15,6 +19,18 @@ class GigDetail extends Component {
     userImg: this.props.userImg,
     userName: this.props.userName,
   };
+
+  // const sample = {
+  //   id: 1,
+  //   status: "open",
+  //   address: "2000 Simcoe Street N, Oshawa, ON",
+  //   title: "Fence Repairman",
+  //   description: "Need someone who knows how to fix a metal fence.",
+  //   budget: "$21/h",
+  //   date: "February 22, 2021",
+  //   visible: true,
+  //   userName: "Durham College"
+  // }
 
   render() {
     return (
