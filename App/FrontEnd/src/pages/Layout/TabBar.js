@@ -55,7 +55,7 @@ class TabBar extends Component {
             <Dropdown.Item href="/search" style={{ zIndex: 2 }}>
               Search
             </Dropdown.Item>
-            <Dropdown.Item href="/gig">Gig Example</Dropdown.Item>
+            <Dropdown.Item href="/gig/1">Gig Example</Dropdown.Item>
             <Dropdown.Item href="/gig-create">Create Gig</Dropdown.Item>
             <Dropdown.Item href="/profile">Profile</Dropdown.Item>
             <Dropdown.Item href="/contact">Reviews</Dropdown.Item>
@@ -74,7 +74,7 @@ class TabBar extends Component {
             </li>
 
             <li className="nav-item">
-              <NavLink to="/gig">
+              <NavLink to="/gig/1">
                 <a href="#" className="nav-link">
                   Gig Example
                 </a>
