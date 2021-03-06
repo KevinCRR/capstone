@@ -56,7 +56,7 @@ class Review extends Component {
                     <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
                       Your offers:
                     </p>
-                    <CardColumns>
+                    {/* <CardColumns>
                       {this.state.posts.map((post) =>(
                         <PostContainer
                           title={post.title}
@@ -64,7 +64,7 @@ class Review extends Component {
                           img={post.img}>
                         </PostContainer>
                       ))}
-                    </CardColumns>
+                    </CardColumns> */}
                   </div>
                 </div>
                 <div className="border-top mt-5"></div>
@@ -74,7 +74,7 @@ class Review extends Component {
                       <p className="font-weight-semibold font-size-5 text-black-2 mb-0">
                         Your replies:
                       </p>
-                      <CardColumns>
+                      {/* <CardColumns>
                         {this.state.posts.map((post) =>(
                           <PostContainer
                             title={post.title}
@@ -83,7 +83,7 @@ class Review extends Component {
                           </PostContainer>
                         ))}
                         {this.state.comment} {this.state.rating} {this.state.date}
-                      </CardColumns>
+                      </CardColumns> */}
                     </div>
                   </div>
                 </div>
