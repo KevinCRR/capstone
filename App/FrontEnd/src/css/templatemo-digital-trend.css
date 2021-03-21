@@ -346,6 +346,20 @@ a:focus {
   width: 100%;
 }
 
+.about-image-container {
+  width: 7rem;
+  height: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+.about-image {
+  object-fit: cover;
+  width: 7rem;
+  height: 7rem;
+}
+
 /*---------------------------------------
      HERO              
   -----------------------------------------*/

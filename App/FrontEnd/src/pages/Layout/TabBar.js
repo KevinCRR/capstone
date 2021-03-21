@@ -58,8 +58,9 @@ class TabBar extends Component {
             <Dropdown.Item href="/gig/1">Gig Example</Dropdown.Item>
             <Dropdown.Item href="/gig-create">Create Gig</Dropdown.Item>
             <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-            <Dropdown.Item href="/contact">Reviews</Dropdown.Item>
-            <Dropdown.Item href="/login">Contact</Dropdown.Item>
+            <Dropdown.Item href="/reviews">Reviews</Dropdown.Item>
+            <Dropdown.Item href="/faq">FAQ</Dropdown.Item>
+            <Dropdown.Item href="/contact">Contact</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
 
@@ -100,6 +101,22 @@ class TabBar extends Component {
               <NavLink to="/review">
                 <a href="#" className="nav-link">
                   Reviews
+                </a>
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/about">
+                <a href="#" className="nav-link">
+                  About
+                </a>
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink to="/faq">
+                <a href="#" className="nav-link">
+                  FAQ
                 </a>
               </NavLink>
             </li>
