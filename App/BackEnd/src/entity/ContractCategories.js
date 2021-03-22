@@ -1,6 +1,13 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
-
-class ContractCategory extends Model {}
-ContractCategory.init({
-  categoryId: { type: DataTypes.UUIDV4, allowNull: false, primaryKey: true },
-});
+import { sequelize } from "../constants/sequelize";
+export default class ContractCategory extends Model {}
+ContractCategory.init(
+    {
+        categoryId: {
+            type: DataTypes.UUID,
+            allowNull: false,
+            primaryKey: true,
+        },
+    },
+    { sequelize: sequelize }
+);

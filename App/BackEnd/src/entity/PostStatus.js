@@ -1,6 +1,13 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
-
-class PostStatus extends Model {}
-PostStatus.init({
-  postStatusID: { type: DataTypes.UUIDV4, allowNull: false, primaryKey: true },
-});
+import { sequelize } from "../constants/sequelize";
+export default class PostStatus extends Model {}
+PostStatus.init(
+    {
+        postStatusID: {
+            type: DataTypes.UUID,
+            allowNull: false,
+            primaryKey: true,
+        },
+    },
+    { sequelize: sequelize }
+);

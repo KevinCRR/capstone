@@ -1,0 +1,75 @@
+version: "3.5"
+services:
+  quick-gig-traefik:
+    image: traefik:v2.3
+    container_name: "quick-gig-traefik"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    command:
+      - --api.dashboard=true
+      - --api.insecure=true
+      - --providers.docker=true
+      - --entrypoints.web.address=:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - web
+      - proxynet
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.monitor.rule=Host(`monitor.localhost`)
+      - traefik.http.routers.monitor.service=api@internal
+
+  quick-gig-postgres:
+    container_name: "quick-gig-postgres"
+    image: postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      #HOST(Your machine):CONTAINER(Docker) --> Map the container port to the HOST port
+      # Outside of container: http://localhost:5433 to access db -
+      # Inside container http://localhost:5432
+      - "5433:5432"
+    networks:
+      - proxynet
+
+  quick-gig-api:
+    container_name: "quick-gig-api"
+    image: node:12
+    command: bash -c 'npx sequelize-cli db:migrate && npm start'
+    ports:
+      - "4000:4000"
+    expose:
+      - 4000
+    environment:
+      DB_HOST: quick-gig-postgres
+    volumes:
+      - .:/srv/backend
+    env_file:
+      - .env
+    working_dir: /srv/backend
+    depends_on:
+      - quick-gig-traefik
+      - quick-gig-postgres
+      # - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.backend.entrypoints=web
+      - traefik.http.routers.backend.rule=Host(`quick-gig.localhost`) && PathPrefix(`/api`) #http://quick-gig.localhost/api
+    networks:
+      - proxynet
+
+volumes:
+  pgdata: {}
+
+networks:
+  web:
+    external: true
+  proxynet:
+    driver: bridge
+    name: custom-proxy

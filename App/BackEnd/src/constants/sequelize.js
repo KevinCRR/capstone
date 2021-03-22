@@ -1,18 +1,12 @@
-import { Sequelize } from "sequelize";
-const sequelize = new Sequelize({
-  database: "gigfinder",
-  dialect: "postgres",
-  host: "gigfinder-db",
-  username: "gigfinder-user",
-  password: "gigfinder-password",
+import Sequelize from "sequelize";
+
+const sequelize = new Sequelize.Sequelize({
+    database: "gigfinder",
+    dialect: "postgres",
+    host: "quick-gig-postgres",
+    port: 5432,
+    username: "gigfinder-user",
+    password: "gigfinder-password",
 });
 
-const ConnectToDB = async () => {
-  try {
-    await sequelize.authenticate();
-  } catch (err) {
-    throw console.error("Unable to connect to the database:", error);
-  }
-};
-
-export { ConnectToDB };
+module.exports = sequelize;

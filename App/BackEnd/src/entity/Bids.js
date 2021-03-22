@@ -1,60 +1,64 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
+import { sequelize } from "../constants/sequelize";
 // const sequelize = new Sequelize('sqlite::memory');
 import Post from "./Post";
 import User from "./User";
 import BidStatus from "./BidStatus";
 export default class Bids extends Model {}
-Bids.init({
-  bidID: {
-    type: DataTypes.UUIDV4,
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false,
-    primaryKey: true,
-  },
+Bids.init(
+    {
+        bidID: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+            primaryKey: true,
+        },
 
-  userID: {
-    type: DataTypes.UUIDV4,
+        userID: {
+            type: DataTypes.UUID,
 
-    references: {
-      model: User,
-      key: "userID",
-      deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            references: {
+                model: User,
+                key: "userID",
+                deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            },
+        },
+
+        postID: {
+            type: DataTypes.UUID,
+
+            references: {
+                model: Post,
+                key: "postID",
+                deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            },
+        },
+
+        price: {
+            type: DataTypes.DECIMAL(2),
+            allowNull: false,
+            validate: { isEmail: true },
+        },
+
+        priceType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { isEmail: true },
+        },
+
+        bidStatusID: {
+            type: DataTypes.UUID,
+
+            references: {
+                model: BidStatus,
+                key: "biddStatusID",
+                deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            },
+        },
+
+        createDate: { type: DataTypes.DATE, allowNull: false },
+
+        responseDate: { type: DataTypes.DATE, allowNull: false },
     },
-  },
-
-  postID: {
-    type: DataTypes.UUIDV4,
-
-    references: {
-      model: Post,
-      key: "postID",
-      deferrable: Deferrable.INITIALLY_IMMEDIATE,
-    },
-  },
-
-  price: {
-    type: DataTypes.DECIMAL(2),
-    allowNull: false,
-    validate: { isEmail: true },
-  },
-
-  priceType: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: { isEmail: true },
-  },
-
-  bidStatusID: {
-    type: DataTypes.UUIDV4,
-
-    references: {
-      model: BidStatus,
-      key: "biddStatusID",
-      deferrable: Deferrable.INITIALLY_IMMEDIATE,
-    },
-  },
-
-  createDate: { type: DataTypes.DATE, allowNull: false },
-
-  responseDate: { type: DataTypes.DATE, allowNull: false },
-});
+    { sequelize: sequelize }
+);

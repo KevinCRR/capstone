@@ -1,55 +1,59 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 // const sequelize = new Sequelize('sqlite::memory');
 import Address from "./Address";
+import { sequelize } from "../constants/sequelize";
 export default class User extends Model {}
-User.init({
-  //uuidb4
-  userID: {
-    type: DataTypes.UUIDV4,
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false,
-    primaryKey: true,
-  },
+User.init(
+    {
+        //uuidb4
+        userID: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+            primaryKey: true,
+        },
 
-  addressID: {
-    type: DataTypes.UUIDV4,
+        addressID: {
+            type: DataTypes.UUID,
 
-    references: {
-      model: Address,
-      key: "addressID",
-      deferrable: Deferrable.INITIALLY_IMMEDIATE,
-    },
-  },
+            references: {
+                model: Address,
+                key: "addressID",
+                deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            },
+        },
 
-  /*
+        /*
   Request account deletion => Soft Delete
   */
-  userStatusID: {
-    type: DataTypes.ENUM("ADMIN", "USER", "TEMPBAN", "PERMBAN"),
-  },
+        userStatusID: {
+            type: DataTypes.ENUM("ADMIN", "USER", "TEMPBAN", "PERMBAN"),
+        },
 
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: { isEmail: true },
-  },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { isEmail: true },
+        },
 
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
 
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: { min: 6, max: 40 },
-  },
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: { min: 6, max: 40 },
+        },
 
-  lastName: { type: DataTypes.STRING, allowNull: false },
+        lastName: { type: DataTypes.STRING, allowNull: false },
 
-  phone: { type: DataTypes.STRING },
+        phone: { type: DataTypes.STRING },
 
-  dateOfBirth: { type: DataTypes.DATE, allowNull: false },
+        dateOfBirth: { type: DataTypes.DATE, allowNull: false },
 
-  bio: { type: DataTypes.STRING, allowNull: false },
-});
+        bio: { type: DataTypes.STRING, allowNull: false },
+    },
+    { sequelize: sequelize }
+);

@@ -1,6 +1,6 @@
 import express from "express";
 const userRouter = express.Router();
-import UserController from "../controller/user.controller";
+import UserController from "../controller/user.js";
 
 /**
  * Get the current user

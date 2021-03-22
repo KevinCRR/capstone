@@ -1,4 +1,5 @@
 import React, { useState, Component } from "react";
+import axios from "axios";
 import {
   Form,
   Row,
@@ -22,7 +23,15 @@ class Profile extends Component {
     country: this.props.country,
     city: this.props.city,
     address: this.props.address,
+    messages: "",
   };
+
+  componentDidMount() {
+    axios.get("http://localhost:4000/").then((res) => {
+      const messages = res.data;
+      this.setState({ messages });
+    });
+  }
 
   render() {
     return (
@@ -52,7 +61,7 @@ class Profile extends Component {
                         <h3 className="font-size-6 mb-0">Billy Bob</h3>
 
                         <span className="font-size-3 text-gray line-height-2">
-                          Grass Cutter, call Today!.
+                          {this.state.messages}
                         </span>
 
                         <Box

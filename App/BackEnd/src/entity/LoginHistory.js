@@ -1,24 +1,29 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
+import { sequelize } from "../constants/sequelize";
 // const sequelize = new Sequelize('sqlite::memory');
+import { sequelize } from "../constants/sequelize";
 import User from "./User";
 export default class LoginHistory extends Model {}
-LoginHistory.init({
-  loginID: {
-    type: DataTypes.UUIDV4,
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false,
-    primaryKey: true,
-  },
+LoginHistory.init(
+    {
+        loginID: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+            allowNull: false,
+            primaryKey: true,
+        },
 
-  userID: {
-    type: DataTypes.UUIDV4,
+        userID: {
+            type: DataTypes.UUID,
 
-    references: {
-      model: User,
-      key: "userID",
-      deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            references: {
+                model: User,
+                key: "userID",
+                deferrable: Deferrable.INITIALLY_IMMEDIATE,
+            },
+        },
+
+        date: { type: DataTypes.DATE, allowNull: false },
     },
-  },
-
-  date: { type: DataTypes.DATE, allowNull: false },
-});
+    { sequelize: sequelize }
+);
