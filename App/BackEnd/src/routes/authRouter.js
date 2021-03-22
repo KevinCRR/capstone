@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 const authRouter = express.Router();
 
 authRouter.get("/login", (req, res) => {
@@ -13,4 +13,4 @@ authRouter.get("/forgot-password", (req, res) => {
     res.send("LOGIN");
 });
 
-export default authRouter;
+module.exports = authRouter;

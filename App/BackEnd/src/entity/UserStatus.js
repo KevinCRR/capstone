@@ -1,5 +1,5 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 export default class UserStatus extends Model {}
 UserStatus.init(
     {

@@ -1,12 +1,12 @@
-import Sequelize from "sequelize";
-
-const sequelize = new Sequelize.Sequelize({
-    database: "gigfinder",
+const Sequelize = require("sequelize");
+require("dotenv").config();
+module.exports = new Sequelize.Sequelize({
+    database: process.env["DB_DATABASE"],
     dialect: "postgres",
     host: "quick-gig-postgres",
     port: 5432,
-    username: "gigfinder-user",
-    password: "gigfinder-password",
+    username: process.env["DB_USERNAME"],
+    password: process.env["DB_PASSWORD"],
 });
 
-module.exports = sequelize;
+// module.exports = sequelize;
