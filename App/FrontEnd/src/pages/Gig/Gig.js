@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 import { Image } from "react-bootstrap";
-import { useParams } from "react-router";
-
-function SetValues() {
-    let { id } = useParams();
-    return { id };
-}
 
 class GigDetail extends Component {
     // state = {
