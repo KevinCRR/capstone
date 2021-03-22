@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 
-export default class UserController {
+class UserController {
     static CurrentUser(req, res) {
         res.send("Hello");
     }
@@ -11,3 +11,5 @@ export default class UserController {
         res.send(`Attempting to get user with ID: ${userid}`);
     }
 }
+
+module.exports = UserController;

@@ -1,7 +1,6 @@
-import { Sequelize, DataTypes, Model } from "sequelize";
-// const sequelize = new Sequelize('sqlite::memory');
+const { DataTypes, Model } = require("sequelize"); // const sequelize = new Sequelize('sqlite::memory');
 import Address from "./Address";
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 export default class User extends Model {}
 User.init(
     {

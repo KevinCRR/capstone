@@ -1,10 +1,9 @@
-import { Sequelize, DataTypes, Model } from "sequelize";
-// const sequelize = new Sequelize('sqlite::memory');
+const { DataTypes, Model } = require("sequelize"); // const sequelize = new Sequelize('sqlite::memory');
 import User from "./User";
 import Address from "./Address";
 import PostStatus from "./PostStatus";
 import ContractCategories from "./ContractCategories";
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 export default class Post extends Model {}
 
 Post.init(

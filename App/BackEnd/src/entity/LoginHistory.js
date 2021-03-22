@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 // const sequelize = new Sequelize('sqlite::memory');
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 import User from "./User";
 export default class LoginHistory extends Model {}
 LoginHistory.init(

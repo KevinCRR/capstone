@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-import { sequelize } from "../constants/sequelize";
+const sequelize = require("../constants/sequelize");
 export default class BidStatus extends Model {}
 BidStatus.init(
     {

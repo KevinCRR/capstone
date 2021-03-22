@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import authRouter from "./routes/authRouter.js";
-import userRouter from "./routes/userRouter.js";
+const express = require("express");
+const cors = require("cors");
+const authRouter = require("./routes/authRouter.js").default;
+const userRouter = require("./routes/userRouter.js").default;
 const app = express();
 
 app.use(

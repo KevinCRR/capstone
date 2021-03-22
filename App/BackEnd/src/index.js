@@ -1,9 +1,9 @@
-import express from "express";
-import cors from "cors";
-
-import authRouter from "./routes/authRouter.js";
-import userRouter from "./routes/userRouter.js";
-import { sequelize } from "./constants/sequelize";
+const express = require("express");
+const cors = require("cors");
+const authRouter = require("./routes/authRouter.js");
+const userRouter = require("./routes/userRouter.js");
+const sequelize = require("./constants/sequelize");
+const bodyParser = require("body-parser");
 
 const main = async () => {
     sequelize
@@ -24,24 +24,19 @@ const main = async () => {
             credentials: true,
         })
     );
-    app.use(express.json());
+    app.use(bodyParser.json());
 
-    app.use("", ({ res }) => {
-        res.send("Hello");
+    app.use("/api", ({ res }) => {
+        res.send({ running: true });
     });
-
-    app.post("/login", ({ res }) => {
-        res.send("LOGIN");
-    });
-
-    app.use("/auth", authRouter);
-    app.use("/user", userRouter);
+    app.use("/api/auth", authRouter);
+    app.use("/api/user", userRouter);
 
     // http://google.com/auth/login
     // http://google.com/post/1
 
     app.listen(4000, () => {
-        console.log("Listening to http://localhost:4000/");
+        console.log("Listening to http://quick-gig.localhost/api");
     });
 };
 
