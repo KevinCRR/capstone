@@ -4,7 +4,7 @@ const sequelize = require("../constants/sequelize");
 import Post from "./Post";
 import User from "./User";
 import BidStatus from "./BidStatus";
-export default class Bids extends Model {}
+class Bids extends Model {}
 Bids.init(
     {
         bidID: {
@@ -62,3 +62,5 @@ Bids.init(
     },
     { sequelize: sequelize }
 );
+
+module.exports = Bids;
