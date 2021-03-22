@@ -51,17 +51,52 @@ class TabBar extends Component {
                     ></Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item href="/search" style={{ zIndex: 2 }}>
-                            Search
+                        <Dropdown.Item>
+                            <NavLink to="/search">
+                                <a href="#">Search</a>
+                            </NavLink>
                         </Dropdown.Item>
-                        <Dropdown.Item href="/gig/1">Gig Example</Dropdown.Item>
-                        <Dropdown.Item href="/gig-create">
-                            Create Gig
+                        <Dropdown.Item>
+                            <NavLink to="/gig/1">
+                                <a href="#">Gig Example</a>
+                            </NavLink>
                         </Dropdown.Item>
-                        <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-                        <Dropdown.Item href="/reviews">Reviews</Dropdown.Item>
-                        <Dropdown.Item href="/faq">FAQ</Dropdown.Item>
-                        <Dropdown.Item href="/contact">Contact</Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/gig-create">
+                                <a href="#">Create Gig</a>
+                            </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/profile">
+                                <a href="#">Profile</a>
+                            </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/review">
+                                <a href="#">Reviews</a>
+                            </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/faq">
+                                <a href="#">FAQ</a>
+                            </NavLink>
+                        </Dropdown.Item>
+
+                        <Dropdown.Item>
+                            <NavLink to="/about">
+                                <a href="#">About</a>
+                            </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/contact">
+                                <a href="#">Contact</a>
+                            </NavLink>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                            <NavLink to="/login">
+                                <a href="#">Sign In</a>
+                            </NavLink>
+                        </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 
@@ -69,7 +104,7 @@ class TabBar extends Component {
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink to="/search">
-                                <a href="#" className="nav-link">
+                                <a href="/search" className="nav-link">
                                     Search
                                 </a>
                             </NavLink>
