@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import NavLink from "react-bootstrap/NavLink";
 import { Formik } from 'formik';
 
@@ -73,16 +75,24 @@ class GigCreate extends Component {
                       </Form.Group>
                       <Form.Group size="lg" controlId="price">
                         <Form.Label>Price</Form.Label>
-                        <Form.Control
-                          autoFocus
-                          type="price"
-                          id='price'
-                          name='price'
-                          //Set the value to one of the properties we initialized in initial values
-                          value={values.price}
-                          //Handle the change of the text, call handleChange + one of the initialValues
-                          onChange={handleChange('price')}
-                        />
+                        <InputGroup className="mb-3">
+                          <InputGroup.Prepend>
+                            <InputGroup.Text>$</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control
+                            autoFocus
+                            type="price"
+                            id='price'
+                            name='price'
+                            //Set the value to one of the properties we initialized in initial values
+                            value={values.price}
+                            //Handle the change of the text, call handleChange + one of the initialValues
+                            onChange={handleChange('price')}
+                          />
+                          <InputGroup.Append>
+                            <InputGroup.Text>/hour</InputGroup.Text>
+                          </InputGroup.Append>
+                        </InputGroup>
                         {errors.price && (<div style={{color:'red'}}>{errors.price}</div>)}
                       </Form.Group>
                       <Form.Group>

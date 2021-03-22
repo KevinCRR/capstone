@@ -48,7 +48,7 @@ export default function Main() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/contact" component={Contact} />
-          <Route path="/gig" component={GigDetail} />
+          <Route path="/gig/:id" children={<GigDetail />} />
           <Route path="/profile" component={Profile} />
           <Route path="/review" component={Review} />
           <Route path="/search" component={Search} />
