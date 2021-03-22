@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Accordion, Card } from "react-bootstrap";
+import video from "../../videos/quickgig.mp4";
 
 class FAQ extends Component {
     render() {
@@ -17,6 +18,16 @@ class FAQ extends Component {
                                 className="col-lg-9 mx-auto col-md-9 col-12 bg-white border rounded p-5"
                                 data-aos="fade-up"
                             >
+                                <div className="row">
+                                    {" "}
+                                    <video
+                                        src={video}
+                                        width="100%"
+                                        height="100%"
+                                        controls
+                                    ></video>
+                                </div>
+                                <br />
                                 <div className="row">
                                     <div className="col">
                                         <Accordion>
