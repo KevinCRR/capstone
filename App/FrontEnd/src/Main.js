@@ -16,6 +16,8 @@ import Register from "./pages/Register";
 import CreateGig from "./pages/Gig/GigCreate";
 import TabBar from "./pages/Layout/TabBar";
 import Footer from "./pages/Layout/Footer";
+import FAQ from "./pages/FAQ";
+import About from "./pages/About";
 
 export default function Main() {
   /*
@@ -53,6 +55,8 @@ export default function Main() {
           <Route path="/review" component={Review} />
           <Route path="/search" component={Search} />
           <Route path="/gig-create" component={CreateGig} />
+          <Route path="/faq" component={FAQ} />
+          <Route path="/about" component={About} />
         </Switch>
       </div>
       <Footer />
