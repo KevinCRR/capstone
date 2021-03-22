@@ -17,7 +17,6 @@ const main = async () => {
         .catch(err => console.error("Unable to sync the database:", err));
 
     const app = express();
-
     app.use(
         cors({
             origin: ["localhost", "quick-gig.localhost"],
