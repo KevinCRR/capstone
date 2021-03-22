@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Badge, Image, Accordion, Card } from "react-bootstrap";
+import { Badge, Image } from "react-bootstrap";
 import kevinpic from "../../images/kevinpic.jpg";
 import mathewpic from "../../images/mathewpic.jpg";
 import peterpic from "../../images/peterpic.png";

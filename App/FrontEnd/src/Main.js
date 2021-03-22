@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "./css/bootstrap.min.css";
 import "./css/templatemo-digital-trend.css";
@@ -20,7 +20,7 @@ import FAQ from "./pages/FAQ";
 import About from "./pages/About";
 
 export default function Main() {
-  /*
+    /*
     [] => On Page load do whatever the callback says
     
     useEffect(() => {
@@ -41,25 +41,25 @@ export default function Main() {
 
     */
 
-  return (
-    <Router>
-      <TabBar />
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/gig/:id" children={<GigDetail />} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/review" component={Review} />
-          <Route path="/search" component={Search} />
-          <Route path="/gig-create" component={CreateGig} />
-          <Route path="/faq" component={FAQ} />
-          <Route path="/about" component={About} />
-        </Switch>
-      </div>
-      <Footer />
-    </Router>
-  );
+    return (
+        <Router>
+            <TabBar />
+            <div>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/gig/:id" children={<GigDetail />} />
+                    <Route path="/profile" component={Profile} />
+                    <Route path="/review" component={Review} />
+                    <Route path="/search" component={Search} />
+                    <Route path="/gig-create" component={CreateGig} />
+                    <Route path="/faq" component={FAQ} />
+                    <Route path="/about" component={About} />
+                </Switch>
+            </div>
+            <Footer />
+        </Router>
+    );
 }
